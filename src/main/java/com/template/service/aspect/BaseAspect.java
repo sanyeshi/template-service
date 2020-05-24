@@ -30,6 +30,16 @@ public class BaseAspect {
 		return method;
 	}
 
+	protected String getMethodName(ProceedingJoinPoint joinPoint) {
+		MethodSignature signature = (MethodSignature) joinPoint.getSignature();
+		String methodName = signature.getName();
+		return methodName;
+	}
+
+	protected String getClassName(ProceedingJoinPoint joinPoint) {
+		return joinPoint.getTarget().getClass().getName();
+	}
+
 	protected String formatMethod(ProceedingJoinPoint joinPoint) {
 		MethodSignature signature = (MethodSignature) joinPoint.getSignature();
 		String className = joinPoint.getTarget().getClass().getName();
