@@ -14,11 +14,18 @@
 
 	<files>
 		<file>
-			<source>${project.build.directory}/template-service.war
+			<source>${project.build.directory}/${bulid.name}.jar
 			</source>
 			<outputDirectory />
 			<filtered>false</filtered>
 		</file>
 	</files>
+
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>lib</outputDirectory>
+		</dependencySet>
+	</dependencySets>
+
 
 </assembly>
